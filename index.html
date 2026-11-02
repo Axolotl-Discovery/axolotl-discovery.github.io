@@ -137,6 +137,7 @@
   .dm h3 { font-size: 24px; font-weight: 600; margin: 20px 0 6px 0; letter-spacing: -0.02em; }
   .dm p { color: var(--gray-400); font-size: 15px; margin: 0 0 6px 0; }
   .dm .precio { font-size: 21px; font-weight: 600; color: #fff; margin: 14px 0 26px 0; }
+  .dm .precio small { font-size: 13px; font-weight: 500; color: var(--gray-400); margin-left: 2px; }
   .dm .btn { font-size: 15px; padding: 9px 20px; }
   .aviso-oscuro { text-align: center; color: var(--gray-400); font-size: 14px; max-width: 620px; margin: 36px auto 0 auto; }
 
@@ -279,6 +280,22 @@
   .proyectos-vacio { text-align: center; color: var(--gray-500); font-size: 16px; padding: 48px 24px; border-radius: 28px; background: #fff; max-width: 560px; margin: 0 auto; }
   section.oscuro .proyectos-vacio { background: #161617; color: var(--gray-400); }
 
+  /* ---- Conferencias ---- */
+  .conf-grid { display: grid; gap: 24px; max-width: 880px; margin: 0 auto; }
+  .conf-card { background: #161617; border-radius: 28px; padding: 40px; display: grid; grid-template-columns: 200px 1fr; gap: 36px; align-items: start; }
+  .conf-fecha { border-right: 1px solid #2a2a2d; padding-right: 28px; }
+  .conf-fecha .dia { font-size: 40px; font-weight: 700; letter-spacing: -0.04em; line-height: 1.05; color: var(--rosa-claro); }
+  .conf-fecha .hora { font-size: 15px; color: var(--gray-400); margin-top: 8px; }
+  .conf-card h3 { font-size: 26px; font-weight: 600; letter-spacing: -0.03em; margin: 0 0 8px 0; color: #fff; }
+  .conf-card .lugar, .conf-card .ponentes { font-size: 14px; color: var(--gray-400); margin: 0 0 6px 0; }
+  .conf-card p.resumen { font-size: 16px; color: #a1a1a6; margin: 14px 0 20px 0; }
+  .conf-card a.abrir { display: inline-block; background: var(--rosa); color: #fff; text-decoration: none; border-radius: 980px; padding: 11px 22px; font-size: 15px; font-weight: 500; }
+  .conf-card a.abrir:hover { background: var(--rosa-dark); }
+  @media (max-width: 760px) {
+    .conf-card { grid-template-columns: 1fr; gap: 20px; padding: 28px; }
+    .conf-fecha { border-right: none; border-bottom: 1px solid #2a2a2d; padding: 0 0 18px 0; }
+  }
+
   /* ---- Cotiza ---- */
   form.quote { max-width: 680px; margin: 0 auto; }
   .field-row { display: flex; gap: 16px; }
@@ -376,6 +393,7 @@
       <a href="#primers">Primers PCR</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#educacion">Educación</a>
+      <a href="#conferencias">Conferencias</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <a class="nav-cta" href="#cotiza">Cotizar</a>
@@ -434,7 +452,7 @@
   <div class="wrap">
     <div class="cabeza">
       <h2 class="titulo-l">Elige tu paquete.</h2>
-      <p class="sub">Según cuántas dianas (proteínas objetivo) y cuántos ligandos quieras evaluar. Precios en pesos mexicanos.</p>
+      <p class="sub">Según cuántas dianas (proteínas objetivo) y cuántos ligandos quieras evaluar. Precios en pesos mexicanos (MXN) y más IVA, si aplica.</p>
     </div>
 
     <div class="grupo">
@@ -444,14 +462,14 @@
         <div class="modelo">
           <h4>Ajolote Explorador</h4>
           <p class="alcance">1 diana, hasta 5 ligandos.</p>
-          <div class="precio">$1,200<small>MXN</small></div>
+          <div class="precio">$1,200<small>MXN más IVA</small></div>
           <p class="nota">Ideal como primer acercamiento.</p>
           <button class="btn btn-primary choose" data-pkg="Ajolote Explorador">Elegir</button>
         </div>
         <div class="modelo">
           <h4>Ajolote Certero</h4>
           <p class="alcance">1 diana, hasta 10 ligandos.</p>
-          <div class="precio">$2,000<small>MXN</small></div>
+          <div class="precio">$2,000<small>MXN más IVA</small></div>
           <p class="nota">Cribado ampliado de una sola diana.</p>
           <button class="btn btn-primary choose" data-pkg="Ajolote Certero">Elegir</button>
         </div>
@@ -472,14 +490,14 @@
         <div class="modelo">
           <h4>Quinto Sol</h4>
           <p class="alcance">Cribado en 5 dianas, hasta 5 ligandos por diana.</p>
-          <div class="precio">$2,500<small>MXN</small></div>
+          <div class="precio">$2,500<small>MXN más IVA</small></div>
           <p class="nota">Multi-diana, alcance medio.</p>
           <button class="btn btn-primary choose" data-pkg="Quinto Sol">Elegir</button>
         </div>
         <div class="modelo">
           <h4>Xochimilco</h4>
           <p class="alcance">Cribado en 10 dianas, de 5 a 10 ligandos por diana.</p>
-          <div class="precio">$3,000<small>MXN</small></div>
+          <div class="precio">$3,000<small>MXN más IVA</small></div>
           <p class="nota">Multi-diana, alcance amplio.</p>
           <button class="btn btn-primary choose" data-pkg="Xochimilco">Elegir</button>
         </div>
@@ -493,7 +511,7 @@
         <div class="modelo">
           <h4>Alebrije</h4>
           <p class="alcance" style="max-width:520px">Modelado del receptor con AlphaFold2 y docking de hasta 5 ligandos. Incluye análisis de fiabilidad del modelo mediante análogos estructurales.</p>
-          <div class="precio">$2,000<small>MXN</small></div>
+          <div class="precio">$2,000<small>MXN más IVA</small></div>
           <p class="nota">Modelado + docking en un solo paquete.</p>
           <button class="btn btn-primary choose" data-pkg="Alebrije">Elegir</button>
         </div>
@@ -611,14 +629,14 @@
         <div class="ns">10<small>ns</small></div>
         <h3>Rebozo Corto</h3>
         <p>Validación rápida de estabilidad.</p>
-        <div class="precio">$5,000 MXN</div>
+        <div class="precio">$5,000 MXN <small>más IVA</small></div>
         <button class="btn btn-secundario choose-dm" data-dm="Rebozo Corto">Agregar a mi cotización</button>
       </div>
       <div class="dm">
         <div class="ns">20–50<small>ns</small></div>
         <h3>Rebozo Largo</h3>
         <p>Validación extendida de estabilidad.</p>
-        <div class="precio">$10,000 MXN</div>
+        <div class="precio">$10,000 MXN <small>más IVA</small></div>
         <button class="btn btn-secundario choose-dm" data-dm="Rebozo Largo">Agregar a mi cotización</button>
       </div>
     </div>
@@ -712,6 +730,21 @@
         <p>Para tu grupo de investigación, laboratorio o clase. Aprenden a hacer docking de principio a fin con herramientas libres, en sus propias computadoras.</p>
       </div>
       <button class="btn btn-primary choose" data-pkg="Taller de docking">Cotizar un taller</button>
+    </div>
+  </div>
+</section>
+
+<section id="conferencias" class="oscuro">
+  <div class="wrap">
+    <div class="cabeza">
+      <h2 class="titulo-l">Conferencias.</h2>
+      <p class="sub">Charlas sobre docking molecular, química computacional y descubrimiento de fármacos.</p>
+    </div>
+
+    <div id="conferencias-grid" class="conf-grid"></div>
+
+    <div id="conferencias-vacio" class="proyectos-vacio" style="display:none;">
+      Próximamente anunciaremos nuestra próxima conferencia.
     </div>
   </div>
 </section>
@@ -1160,6 +1193,38 @@
     .catch(function(err) {
       console.error('No se pudieron cargar las herramientas educativas:', err);
       document.getElementById('educacion-vacio').style.display = 'block';
+    });
+
+  // ===================== CONFERENCIAS =====================
+  // Las conferencias se leen de assets/conferencias.json (ver README.md).
+  fetch('./assets/conferencias.json')
+    .then(function(r) { return r.json(); })
+    .then(function(lista) {
+      var grid = document.getElementById('conferencias-grid');
+      var vacio = document.getElementById('conferencias-vacio');
+      if (!lista || lista.length === 0) {
+        vacio.style.display = 'block';
+        return;
+      }
+      lista.forEach(function(c) {
+        var card = document.createElement('div');
+        card.className = 'conf-card';
+        var fechaHtml = '<div class="conf-fecha">' +
+          (c.fecha ? '<div class="dia">' + esc(c.fecha) + '</div>' : '') +
+          (c.hora ? '<div class="hora">' + esc(c.hora) + '</div>' : '') +
+        '</div>';
+        var lugarHtml = c.lugar ? '<p class="lugar">' + esc(c.lugar) + '</p>' : '';
+        var ponentesHtml = c.ponentes ? '<p class="ponentes">' + esc(c.ponentes) + '</p>' : '';
+        var resumenHtml = c.descripcion ? '<p class="resumen">' + esc(c.descripcion) + '</p>' : '';
+        var enlaceHtml = c.enlace ? '<a class="abrir" href="' + esc(urlSegura(c.enlace)) + '" target="_blank" rel="noopener">' + esc(c.boton || 'Más información') + '</a>' : '';
+        card.innerHTML = fechaHtml +
+          '<div><h3>' + esc(c.titulo) + '</h3>' + lugarHtml + ponentesHtml + resumenHtml + enlaceHtml + '</div>';
+        grid.appendChild(card);
+      });
+    })
+    .catch(function(err) {
+      console.error('No se pudieron cargar las conferencias:', err);
+      document.getElementById('conferencias-vacio').style.display = 'block';
     });
 
   // Botones "Elegir": preseleccionan el paquete y bajan al formulario
