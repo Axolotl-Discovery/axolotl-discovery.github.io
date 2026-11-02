@@ -30,3 +30,25 @@ Para una app con varias descargas (una por sistema) usa en su lugar `"descargas"
 sale relleno y los demás con borde; con `"secundario": true` la opción sale como enlace pequeño (p. ej. Mac con Intel).
 Para que el enlace siempre baje la última versión usa
 `https://github.com/<org>/<repo>/releases/latest/download/<archivo>`.
+
+## Conferencias
+
+La sección muestra un carrusel de fotos que se lee de `assets/conferencias.json`. Mientras esté vacío (`[]`),
+aparece el aviso "Pronto compartiremos aquí fotos de nuestras conferencias". Sube las fotos a
+`assets/conferencias/` y añade un objeto por foto, en el orden en que quieres que salgan:
+
+```json
+[
+  {
+    "imagen": "./assets/conferencias/charla-2027-03.jpg",
+    "titulo": "Nombre de la conferencia",
+    "descripcion": "Dónde y cuándo, o una frase sobre la foto.",
+    "alt": "Descripción de la foto para lectores de pantalla"
+  }
+]
+```
+
+Solo `imagen` es obligatorio; `titulo`, `descripcion` y `alt` son opcionales. Las imágenes deben estar dentro del
+propio sitio (la política de seguridad `_headers` solo permite imágenes locales). Conviene reducirlas a unos
+1600 px de ancho y menos de 500 KB cada una. La foto se recorta para llenar el marco (16:10 en escritorio,
+4:3 en celular), así que deja a las personas hacia el centro.
