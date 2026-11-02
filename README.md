@@ -33,23 +33,22 @@ Para que el enlace siempre baje la última versión usa
 
 ## Conferencias
 
-Las conferencias se leen de `assets/conferencias.json`. Mientras esté vacío (`[]`), la sección muestra
-"Próximamente anunciaremos nuestra próxima conferencia". Para anunciar una, añade un objeto:
+La sección muestra un carrusel de fotos que se lee de `assets/conferencias.json`. Mientras esté vacío (`[]`),
+aparece el aviso "Pronto compartiremos aquí fotos de nuestras conferencias". Sube las fotos a
+`assets/conferencias/` y añade un objeto por foto, en el orden en que quieres que salgan:
 
 ```json
 [
   {
-    "titulo": "Título de la conferencia",
-    "fecha": "15 de marzo de 2027",
-    "hora": "17:00 h (CDMX)",
-    "lugar": "Lugar o plataforma en línea",
-    "ponentes": "Nombre de quien la imparte",
-    "descripcion": "De qué trata y a quién va dirigida.",
-    "enlace": "https://enlace-de-registro",
-    "boton": "Registrarme"
+    "imagen": "./assets/conferencias/charla-2027-03.jpg",
+    "titulo": "Nombre de la conferencia",
+    "descripcion": "Dónde y cuándo, o una frase sobre la foto.",
+    "alt": "Descripción de la foto para lectores de pantalla"
   }
 ]
 ```
 
-Solo `titulo` es obligatorio; los demás campos se pueden omitir. Una vez realizada, quita el objeto
-o muévelo a otra lista cuando exista la sección de conferencias pasadas.
+Solo `imagen` es obligatorio; `titulo`, `descripcion` y `alt` son opcionales. Las imágenes deben estar dentro del
+propio sitio (la política de seguridad `_headers` solo permite imágenes locales). Conviene reducirlas a unos
+1600 px de ancho y menos de 500 KB cada una. La foto se recorta para llenar el marco (16:10 en escritorio,
+4:3 en celular), así que deja a las personas hacia el centro.
