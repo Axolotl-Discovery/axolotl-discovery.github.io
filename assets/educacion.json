@@ -60,6 +60,7 @@
       }
     ],
     "nota": "Windows 10/11 (usa WSL2) · Linux · internet y ~6 GB libres · la instalación tarda 15-30 min. Mac: versión en pruebas.",
-    "codigo": "https://github.com/Axolotl-Discovery/axolotl-docking"
+    "codigo": "https://github.com/Axolotl-Discovery/axolotl-docking",
+    "imagen": "assets/educacion/docking.png"
   }
 ]
