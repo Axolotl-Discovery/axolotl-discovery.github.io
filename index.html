@@ -1177,7 +1177,7 @@
         if (h.descargas && h.descargas.length) {
           // Varias descargas (una por sistema): la del sistema del visitante va rellena, las demás con borde.
           var ua = navigator.userAgent || '';
-          var so = /iPhone|iPad|Android/.test(ua) ? '' : /Mac/.test(ua) ? 'mac' : /Win/.test(ua) ? 'windows' : '';
+          var so = /iPhone|iPad|Android/.test(ua) ? '' : /Mac/.test(ua) ? 'mac' : /Win/.test(ua) ? 'windows' : /Linux|X11/.test(ua) ? 'linux' : '';
           var prin = h.descargas.filter(function(d) { return !d.secundario; });
           var hayMatch = prin.some(function(d) { return d.so === so; });
           abrirHtml = prin.map(function(d, i) {
