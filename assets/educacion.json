@@ -38,7 +38,7 @@
     "etiquetas": [
       "Docking",
       "smina / AutoDock4",
-      "Windows · Mac · Linux",
+      "Windows · Linux",
       "Código en GitHub"
     ],
     "descargas": [
@@ -48,17 +48,18 @@
         "enlace": "https://github.com/Axolotl-Discovery/axolotl-docking/releases/latest/download/AxolotlDocking-Windows.exe"
       },
       {
-        "so": "mac",
-        "boton": "Descargar para Mac",
-        "enlace": "https://github.com/Axolotl-Discovery/axolotl-docking/releases/latest/download/AxolotlDocking-Mac.zip"
-      },
-      {
         "so": "linux",
         "boton": "Descargar para Linux",
         "enlace": "https://github.com/Axolotl-Discovery/axolotl-docking/releases/latest/download/AxolotlDocking-Linux.sh"
+      },
+      {
+        "so": "mac",
+        "boton": "Mac (en pruebas)",
+        "enlace": "https://github.com/Axolotl-Discovery/axolotl-docking/releases/latest/download/AxolotlDocking-Mac.zip",
+        "secundario": true
       }
     ],
-    "nota": "Windows 10/11 (usa WSL2) · macOS · Linux · internet y ~6 GB libres · tarda 15-30 min en instalar",
+    "nota": "Windows 10/11 (usa WSL2) · Linux · internet y ~6 GB libres · la instalación tarda 15-30 min. Mac: versión en pruebas.",
     "codigo": "https://github.com/Axolotl-Discovery/axolotl-docking"
   }
 ]
